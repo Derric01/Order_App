@@ -1,0 +1,346 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+  --primary-color: #3498db;
+  --primary-hover: #2980b9;
+  --secondary-color: #e74c3c;
+  --text-color: #ecf0f1;
+  --light-text: #bdc3c7;
+  --background: #1a1a1a;
+  --card-bg: #2c3e50;
+  --border-color: #34495e;
+  --success-color: #2ecc71;
+  --error-color: #e74c3c;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--text-color);
+}
+
+.page-background {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #2c3e50 0%, #1a1a1a 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+}
+
+.form-container {
+  background-color: var(--card-bg);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 1000px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  position: relative;
+  overflow: hidden;
+}
+
+.form-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+}
+
+.form-title {
+  color: var(--text-color);
+  font-size: 36px;
+  text-align: center;
+  margin-bottom: 25px;
+  position: relative;
+  padding-bottom: 15px;
+  font-weight: 700;
+}
+
+.form-title:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  border-radius: 4px;
+}
+
+.form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+}
+
+.form-group {
+  margin-bottom: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: var(--text-color);
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.form-input, .form-textarea, select {
+  padding: 14px;
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  background-color: #34495e;
+  color: var(--text-color);
+}
+
+.form-input:focus, .form-textarea:focus, select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.25);
+  background-color: #2c3e50;
+}
+
+.form-textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.button-group {
+  grid-column: span 2;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.submit-button, .reset-button {
+  padding: 14px 36px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+}
+
+.submit-button {
+  background-color: var(--primary-color);
+  color: white;
+  box-shadow: 0 4px 12px rgba(67, 97, 238, 0.2);
+}
+
+.submit-button:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(67, 97, 238, 0.25);
+}
+
+.reset-button {
+  background-color: transparent;
+  color: var(--text-color);
+  border: 2px solid var(--border-color);
+}
+
+.reset-button:hover {
+  background-color: #34495e;
+  border-color: #2c3e50;
+}
+
+.error-message {
+  grid-column: span 2;
+  color: #fff;
+  background-color: rgba(231, 76, 60, 0.2);
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  font-weight: 500;
+  border-left: 4px solid var(--error-color);
+}
+
+.success-message {
+  text-align: center;
+  background-color: rgba(46, 204, 113, 0.2);
+  padding: 40px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  border: 2px dashed var(--success-color);
+}
+
+.success-message h3 {
+  color: var(--success-color);
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.success-message p {
+  font-size: 16px;
+  color: var(--text-color);
+  margin-bottom: 10px;
+}
+
+.order-summary {
+  background: linear-gradient(to bottom, #2c3e50, #34495e);
+  padding: 25px;
+  border-radius: 12px;
+  margin-top: 25px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.order-summary h3 {
+  font-size: 22px;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 12px;
+}
+
+.order-summary p {
+  margin-bottom: 12px;
+  font-size: 16px;
+  color: var(--light-text);
+  display: flex;
+  justify-content: space-between;
+}
+
+.order-summary p:last-child {
+  margin-bottom: 0;
+}
+
+.order-summary strong {
+  color: var(--text-color);
+  font-weight: 600;
+}
+
+/* Total price highlight */
+.order-summary p:nth-last-child(1),
+.order-summary p:nth-last-child(2) {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+/* Add some spacing in the form sections */
+.form-group:nth-child(2n) {
+  margin-right: 15px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .form {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .button-group {
+    grid-column: span 1;
+    flex-direction: column;
+  }
+  
+  .error-message {
+    grid-column: span 1;
+  }
+  
+  .form-container {
+    padding: 25px;
+  }
+  
+  .page-background {
+    padding: 15px;
+  }
+  
+  .form-title {
+    font-size: 28px;
+  }
+  
+  .order-summary p {
+    flex-direction: column;
+    margin-bottom: 15px;
+  }
+}
+
+/* Add subtle animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.form-container {
+  animation: fadeIn 0.6s ease-out;
+}
+
+/* Add visual cue for required fields */
+label[for="name"]::after,
+label[for="email"]::after,
+label[for="address"]::after,
+label[for="product"]::after,
+label[for="quantity"]::after,
+label[for="payment"]::after {
+  content: "*";
+  color: var(--secondary-color);
+  margin-left: 4px;
+}
+
+/* Custom styling for select dropdowns */
+select {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23bdc3c7' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1em;
+}
+
+/* Order summary item spacing and styling */
+.order-summary {
+  display: flex;
+  flex-direction: column;
+}
+
+.summary-group {
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+}
+
+.summary-group:last-of-type {
+  border-bottom: none;
+}
+
+/* Better spacing for the form */
+.form-group input,
+.form-group select,
+.form-group textarea {
+  margin-top: 5px;
+}
+
+/* Make quantity input narrower */
+#quantity {
+  width: 100%;
+  max-width: 120px;
+}

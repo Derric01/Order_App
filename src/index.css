@@ -1,0 +1,136 @@
+/* General Background */
+.page-background {
+  background: linear-gradient(135deg, #2d3436 0%, #1a1c20 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Form Container */
+.form-container {
+  background: linear-gradient(135deg, #2c3e50, #1e272e);
+  padding: 35px 30px;
+  border-radius: 18px;
+  box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 600px;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+/* Form title */
+.form-title {
+  text-align: center;
+  font-size: 28px;
+  color: #e2e2e2;
+  margin-bottom: 25px;
+}
+
+/* Form Groups */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Labels */
+.form-group label {
+  font-size: 15px;
+  color: #dcdde1;
+  font-weight: 500;
+}
+
+/* Inputs and Textareas */
+.form-input,
+.form-textarea,
+select {
+  padding: 12px 15px;
+  border: 1px solid #555;
+  border-radius: 10px;
+  font-size: 16px;
+  background-color: #2c3e50;
+  color: #f5f6fa;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+/* Focus Effect */
+.form-input:focus,
+.form-textarea:focus,
+select:focus {
+  background-color: #34495e;
+  border-color: #3498db;
+  box-shadow: 0 0 8px rgba(52, 152, 219, 0.6);
+  outline: none;
+}
+
+/* Buttons */
+.submit-button,
+.reset-button {
+  padding: 12px 25px;
+  font-size: 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.submit-button {
+  background: linear-gradient(135deg, #3498db, #2c3e50);
+  color: #fff;
+}
+
+.reset-button {
+  background: linear-gradient(135deg, #e74c3c, #c0392b);
+  color: #fff;
+}
+
+/* Success Message */
+.success-message {
+  background-color: #2ecc71;
+  color: #f5f6fa;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Order Summary */
+.order-summary {
+  margin-top: 20px;
+  padding-top: 10px;
+  border-top: 1px solid #555;
+}
+
+.order-summary h3 {
+  font-weight: bold;
+  color: #dcdde1;
+}
+
+/* Error Message */
+.error-message {
+  background-color: #e74c3c;
+  color: #f5f6fa;
+  padding: 10px;
+  border-radius: 8px;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .form-container {
+    padding: 25px 20px;
+  }
+}
